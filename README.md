@@ -1,4 +1,4 @@
-# AeroLogistics 0.2.1 — Modular Airports
+# AeroLogistics 0.2.2 — Modular Airports
 
 Factorio 2.0 prototype with optional Space Age dependency.
 
@@ -9,10 +9,11 @@ Factorio 2.0 prototype with optional Space Age dependency.
 - Russian and English localization.
 
 ## Install
-1. Copy `AeroLogistics_0.2.0.zip` into the Factorio `mods` directory: `%APPDATA%\\Factorio\\mods` on Windows, `~/.factorio/mods` on Linux, or `~/Library/Application Support/factorio/mods` on macOS.
-2. Enable AeroLogistics in the Mods menu and restart if prompted.
-3. Start a new game or load a save and research Basic Aviation.
-4. Stone paving is available immediately; concrete paving and initial modules unlock with Basic Aviation; reinforced paving and advanced modules unlock with Advanced Airports.
+1. Download the ZIP for the `fix/0.2.2-factorio-2-tile-prototypes` branch from GitHub, or use the repository's Code → Download ZIP option while viewing that branch.
+2. Copy the mod folder (the folder containing `info.json`) into the Factorio `mods` directory: `%APPDATA%\\Factorio\\mods` on Windows, `~/.factorio/mods` on Linux, or `~/Library/Application Support/factorio/mods` on macOS.
+3. Enable AeroLogistics in the Mods menu and restart if prompted.
+4. Start a new game or load a save and research Basic Aviation.
+5. Stone paving is available immediately; concrete paving and initial modules unlock with Basic Aviation; reinforced paving and advanced modules unlock with Advanced Airports.
 
 ## Prototype limitations
 - Not tested by launching Factorio in this environment; check `factorio-current.log` if the game reports an error.
