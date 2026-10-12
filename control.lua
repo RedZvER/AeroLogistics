@@ -89,7 +89,7 @@ local function update_one(entity)
       [4] = defines.direction.south,
       [8] = defines.direction.west
     }
-    direction = directions[mask] or direction
+    direction = directions[mask] or defines.direction.north
   end
 
   if entity.name == target and entity.direction == direction then return end
