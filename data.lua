@@ -1,5 +1,6 @@
 require("prototypes.tiles")
 require("prototypes.items")
 require("prototypes.entities")
+require("prototypes.markings")
 require("prototypes.recipes")
 require("prototypes.technologies")

@@ -20,6 +20,7 @@ data:extend({
     tile_item("aerol-runway-stone-item", "aerol-runway-stone", "__base__/graphics/icons/stone-brick.png", "a[aerol]-x"),
     tile_item("aerol-runway-concrete-item", "aerol-runway-concrete", "__base__/graphics/icons/concrete.png", "a[aerol]-y"),
     tile_item("aerol-runway-reinforced-item", "aerol-runway-reinforced", "__base__/graphics/icons/refined-concrete.png", "a[aerol]-z"),
+    entity_item("aerol-taxi-marking-item", "__base__/graphics/icons/constant-combinator.png", "z[aerol]-m[marking]", 100),
     entity_item("aerol-small-hangar", "__AeroLogistics__/graphics/aerol/icon-small-hangar.png", "z[aerol]-a[hangar]"),
     entity_item("aerol-large-hangar", "__AeroLogistics__/graphics/aerol/icon-large-hangar.png", "z[aerol]-b[hangar]"),
     entity_item("aerol-aircraft-stand", "__AeroLogistics__/graphics/aerol/icon-aircraft-stand.png", "z[aerol]-c[stand]", 20),
