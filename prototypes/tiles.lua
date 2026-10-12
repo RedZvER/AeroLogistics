@@ -8,7 +8,13 @@ local function add_tile(source_name, new_name, order)
   data:extend({tile})
 end
 
--- Reuse vanilla graphics/transitions so the prototype is self-contained.
-add_tile("stone-path", "aerol-runway-stone", "z[aerol]-a[stone]")
-add_tile("concrete", "aerol-runway-concrete", "z[aerol]-b[concrete]")
-add_tile("refined-concrete", "aerol-runway-reinforced", "z[aerol]-c[reinforced]")
+-- New named surfaces are ready for dedicated AeroLogistics sprite sheets.
+-- Until those assets are added, they inherit vanilla textures/transitions.
+add_tile("refined-concrete", "aerol-runway-asphalt", "z[aerol]-a[runway]")
+add_tile("concrete", "aerol-taxiway-concrete", "z[aerol]-b[taxiway]")
+add_tile("refined-concrete", "aerol-apron-concrete", "z[aerol]-c[apron]")
+
+-- Keep original prototypes intact for existing saves.
+add_tile("stone-path", "aerol-runway-stone", "z[aerol]-x[stone]")
+add_tile("concrete", "aerol-runway-concrete", "z[aerol]-y[concrete]")
+add_tile("refined-concrete", "aerol-runway-reinforced", "z[aerol]-z[reinforced]")
