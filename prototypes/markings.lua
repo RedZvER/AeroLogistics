@@ -1,8 +1,17 @@
--- Taxi guidance overlays with 4-direction sprite sheets.
+-- Taxi guidance overlays. Each direction uses an isolated 64x64 image
+-- to prevent adjacent atlas frames from bleeding into the rendered sprite.
 local shapes = {"end", "straight", "corner", "tee", "cross"}
+local directions = {"north", "east", "south", "west"}
 local entities = {}
 for _, shape in ipairs(shapes) do
-  local sprite = "__AeroLogistics__/graphics/aerol/markings/taxi-" .. shape .. "-sheet.png"
+  local picture = {}
+  for _, direction in ipairs(directions) do
+    picture[direction] = {
+      filename = "__AeroLogistics__/graphics/aerol/markings/taxi-" .. shape .. "-" .. direction .. ".png",
+      width = 64,
+      height = 64
+    }
+  end
   entities[#entities + 1] = {
     type = "simple-entity-with-owner",
     name = "aerol-taxi-marking-" .. shape,
@@ -16,12 +25,7 @@ for _, shape in ipairs(shapes) do
     minable = {mining_time = 0.1, result = "aerol-taxi-marking-item"},
     fast_replaceable_group = "aerol-taxi-marking",
     render_layer = "floor",
-    picture = {
-      north = {filename = sprite, width = 64, height = 64, x = 0, y = 0},
-      east  = {filename = sprite, width = 64, height = 64, x = 64, y = 0},
-      south = {filename = sprite, width = 64, height = 64, x = 0, y = 64},
-      west  = {filename = sprite, width = 64, height = 64, x = 64, y = 64}
-    }
+    picture = picture
   }
 end
 data:extend(entities)
