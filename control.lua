@@ -45,15 +45,11 @@ local function update_one(entity)
   local target = PREFIX .. shape_for(mask)
   if entity.name == target then return end
   local surface, position, force, direction = entity.surface, entity.position, entity.force, entity.direction
-  local health = entity.health
   entity.destroy{raise_destroy = false}
   local replacement = surface.create_entity{
     name = target, position = position, force = force, direction = direction,
     raise_built = false, create_build_effect_smoke = false
   }
-  if replacement and replacement.valid and health then
-    replacement.health = math.min(health, replacement.prototype.max_health)
-  end
 end
 local function refresh_around(entity)
   if not entity or not entity.valid then return end
