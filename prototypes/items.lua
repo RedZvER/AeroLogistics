@@ -23,7 +23,7 @@ local function tile_item(name, tile, icon, order)
         place_as_tile = {
             result = tile,
             condition_size = 1,
-            condition = {layers = {water_tile = true}}
+            condition = {layers = {ground_tile = true}}
         }
     }
 end
