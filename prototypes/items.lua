@@ -9,7 +9,7 @@ local function tile_item(name, tile, icon, order)
     return {
         type = "item", name = name, icon = icon, icon_size = 64,
         subgroup = "terrain", order = order, stack_size = 100,
-        place_as_tile = {result = tile, condition_size = 1, condition = {layers = {ground_tile = true}}}
+        place_as_tile = {result = tile, condition_size = 1, condition = {layers = {water_tile = true}}}
     }
 end
 
