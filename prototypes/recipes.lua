@@ -3,6 +3,9 @@ local function recipe(name, ingredients, count, energy)
     results={{type="item",name=name,amount=count or 1}},energy_required=energy or 3}
 end
 data:extend({
+ {type="recipe",name="aerol-runway-asphalt-item",enabled=true,ingredients={{type="item",name="stone-brick",amount=2},{type="item",name="iron-plate",amount=1}},results={{type="item",name="aerol-runway-asphalt-item",amount=2}},energy_required=1},
+ {type="recipe",name="aerol-taxiway-concrete-item",enabled=false,ingredients={{type="item",name="concrete",amount=2},{type="item",name="copper-cable",amount=1}},results={{type="item",name="aerol-taxiway-concrete-item",amount=2}},energy_required=1},
+ {type="recipe",name="aerol-apron-concrete-item",enabled=false,ingredients={{type="item",name="concrete",amount=5},{type="item",name="steel-plate",amount=1}},results={{type="item",name="aerol-apron-concrete-item",amount=5}},energy_required=2},
  {type="recipe",name="aerol-runway-stone-item",enabled=true,ingredients={{type="item",name="stone-brick",amount=1}},results={{type="item",name="aerol-runway-stone-item",amount=1}},energy_required=0.5},
  {type="recipe",name="aerol-runway-concrete-item",enabled=false,ingredients={{type="item",name="stone-brick",amount=5},{type="item",name="iron-plate",amount=1}},results={{type="item",name="aerol-runway-concrete-item",amount=5}},energy_required=2},
  {type="recipe",name="aerol-runway-reinforced-item",enabled=false,ingredients={{type="item",name="concrete",amount=10},{type="item",name="steel-plate",amount=2},{type="item",name="iron-stick",amount=4}},results={{type="item",name="aerol-runway-reinforced-item",amount=10}},energy_required=4},
