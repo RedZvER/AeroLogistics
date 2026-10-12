@@ -1,21 +1,19 @@
-# AeroLogistics 0.2.2 — Modular Airports
+# AeroLogistics 0.3.0 — Runway & Taxiway Foundations
 
 Factorio 2.0 prototype with optional Space Age dependency.
 
-## Included
-- Three placeable runway/taxiway paving tiers: stone path, concrete, refined concrete (used as reinforced-concrete tier).
-- Small/large hangars, aircraft stand, control tower, fuel depot, cargo terminal, repair shop and mail-plane placeholder.
-- Basic Aviation and Advanced Airports technologies.
-- Russian and English localization.
+## This milestone
+- Establishes the AeroLogistics art direction: Factorio-native industrial readability with a stronger Generals-style military airfield identity.
+- Adds separate runway-asphalt, taxiway-concrete and apron-concrete paving prototypes and crafting recipes.
+- Unlocks taxiway concrete with Basic Aviation and apron concrete with Advanced Airports.
+- Preserves the original runway tile/item IDs for existing saves.
+- Adds English and Russian names for the new tiles/items.
 
-## Install
-1. Download the ZIP for the `fix/0.2.2-factorio-2-tile-prototypes` branch from GitHub, or use the repository's Code → Download ZIP option while viewing that branch.
-2. Copy the mod folder (the folder containing `info.json`) into the Factorio `mods` directory: `%APPDATA%\\Factorio\\mods` on Windows, `~/.factorio/mods` on Linux, or `~/Library/Application Support/factorio/mods` on macOS.
-3. Enable AeroLogistics in the Mods menu and restart if prompted.
-4. Start a new game or load a save and research Basic Aviation.
-5. Stone paving is available immediately; concrete paving and initial modules unlock with Basic Aviation; reinforced paving and advanced modules unlock with Advanced Airports.
+## Important visual status
+This is the prototype foundation, not the finished custom texture pack. New tile prototypes currently inherit vanilla Factorio tile graphics; custom runway markings, taxiway junctions, thresholds, lights and apron stand sprites still need to be drawn and connected to the tile definitions. The concept image is a visual target, not a game-ready sprite sheet.
 
-## Prototype limitations
-- Not tested by launching Factorio in this environment; check `factorio-current.log` if the game reports an error.
-- Tile visuals reuse vanilla tiles. Airport buildings and plane reuse vanilla art as placeholders.
-- Pavement currently does not affect aircraft weight or takeoff distance. Cargo operations, fuel consumption, aircraft routing and dispatcher automation are not implemented yet.
+## Install/test
+Download the ZIP for the `feature/0.3.0-runway-taxiway-visuals` branch and place the mod folder containing `info.json` in the Factorio mods directory. Test startup, crafting and research, then verify that the new surfaces can be placed and that old saves still load.
+
+## Known limitations
+No Factorio launch test has been performed from this development environment. Aircraft behavior, cargo operations, fuel consumption, routing and dispatcher automation are not implemented.
