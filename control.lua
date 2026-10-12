@@ -42,9 +42,26 @@ local function update_one(entity)
     local neighbour = at(entity.surface, {x = p.x + d.x, y = p.y + d.y})
     if neighbour and neighbour.unit_number ~= entity.unit_number then mask = mask + d.bit end
   end
-  local target = PREFIX .. shape_for(mask)
-  if entity.name == target then return end
-  local surface, position, force, direction = entity.surface, entity.position, entity.force, entity.direction
+  local shape = shape_for(mask)
+  local target = PREFIX .. shape
+  local direction = entity.direction
+  if shape == "straight" then
+    direction = (mask == 5) and defines.direction.north or defines.direction.east
+  elseif shape == "corner" then
+    local directions = {[3] = defines.direction.north, [6] = defines.direction.east,
+      [12] = defines.direction.south, [9] = defines.direction.west}
+    direction = directions[mask] or direction
+  elseif shape == "tee" then
+    local directions = {[7] = defines.direction.north, [14] = defines.direction.east,
+      [13] = defines.direction.south, [11] = defines.direction.west}
+    direction = directions[mask] or direction
+  elseif shape == "end" then
+    local directions = {[1] = defines.direction.north, [2] = defines.direction.east,
+      [4] = defines.direction.south, [8] = defines.direction.west}
+    direction = directions[mask] or direction
+  end
+  if entity.name == target and entity.direction == direction then return end
+  local surface, position, force = entity.surface, entity.position, entity.force
   entity.destroy{raise_destroy = false}
   local replacement = surface.create_entity{
     name = target, position = position, force = force, direction = direction,
